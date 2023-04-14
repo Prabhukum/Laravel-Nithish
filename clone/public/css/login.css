@@ -1,0 +1,170 @@
+
+.containerOuterLayout {
+    position: relative;
+    top: 0vh;
+    left: 0vh;
+    width: 177.86vh;
+    height: 100vh;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    margin: auto;
+
+}
+
+.img_login {
+    /* Layout Properties */
+    position: absolute;
+    top: 0vh;
+    left: 0vh;
+    width: 115.23vh;
+    height: 100vh;
+    /* UI Properties */
+    opacity: 1;
+
+}
+
+.img_header {
+    /* Layout Properties */
+    position: absolute;
+    top: 24.21vh;
+    left: 134.37vh;
+    width: 24.34vh;
+    height: 9.63vh;
+    /* UI Properties */
+    background: transparent url('../img/header.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+
+}
+
+.title_header {
+        /* Layout Properties */
+    position: absolute;
+    top: 33.85vh;
+    left: 128.51vh;
+    width: 36.06vh;
+    height: 2.60vh;
+    /* UI Properties */
+    text-align: left;
+    font: normal normal bold 1.82vh/4.68vh Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+.rembox {
+    position: absolute;
+    top: 61.20vh;
+    left: 124.74vh;
+    width: 1.95vh;
+    height: 1.82vh;
+    /* UI Properties */
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    opacity: 1;
+}
+
+
+.rememberBox {
+    position: absolute;
+    top: 61.11vh;
+    left: 127.71vh;
+    width: 11.72vh;
+    height: 2.21vh;
+    text-align: left;
+    font: normal normal bold 1.56vh/2.34vh Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    }
+
+    .rememberText {
+    position: absolute;
+    top: 61.56vh;
+    left: 127.71vh;
+    width: 11.72vh;
+    height: 2.21vh;
+    text-align: left;
+    font: normal normal bold 1.56vh/2.34vh Poppins;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+    }
+
+    .forgetPassword {
+    position: absolute;
+    top: 61.56vh;
+    left: 150.94vh;
+    width: 17.84vh;
+    height: 2.21vh;
+    text-align: left;
+    font: normal normal bold 1.56vh/2.34vh Poppins;
+    letter-spacing: 0px;
+    color: #0033A1;
+    opacity: 1;
+    }
+
+    .login_email {
+    position: absolute;
+    top: 45.42vh;
+    left: 125vh;
+    width: 44.01vh;
+    height: 5.21vh;
+    border: none;
+    border-bottom: 0.13vh solid #D1D1D4;
+    font: normal normal bold 1.56vh/2.34vh Poppins;
+    color: #000000;
+    background: none;
+    }
+
+    .login_password {
+    position: absolute;
+    top: 52.08vh;
+    left: 125vh;
+    width: 44.01vh;
+    height: 5.21vh;
+    border: none;
+    border-bottom: 0.13vh solid #D1D1D4;
+    font: normal normal bold 1.56vh/2.34vh Poppins;
+    color: #000000;
+    background: none;
+    }
+
+    .login_email:active,
+    .login_email:focus,
+    .login_email:hover {
+    outline: none;
+    border-bottom-color: #6A679E;
+    }
+
+    .login_password:active,
+    .login_password:focus,
+    .login_password:hover {
+    outline: none;
+    border-bottom-color: #6A679E;
+    }
+
+    .button_Next {
+    position: absolute;
+    top: 69.01vh;
+    left: 125vh;
+    width: 44.01vh;
+    height: 6.25vh;
+    background: #213E97 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 8px;
+    }
+
+    .text_Next {
+    position: absolute;
+    top: 2.21vh;
+    left: 18.86vh;
+    width: 6.38vh;
+    height: 3.33vh;
+    text-align: left;
+    font: normal normal bold 2.34vh/1.95vh Poppins;
+    letter-spacing: 0.9px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    }

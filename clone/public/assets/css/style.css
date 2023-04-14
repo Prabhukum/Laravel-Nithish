@@ -1,11 +1,18 @@
 input[type="text"], select.form-control {
+
+
+    height: 24px;
     border: none;
     border-bottom: 1px solid #000000;
     outline: none;
      border-bottom-color: #6A679E;
-     margin: 0 auto;
+     /* margin: 0 auto; */
     float: none;
     }
+
+
+
+
     input[type="password"], select.form-control {
     margin: 0 auto;
     float: none;
