@@ -69,17 +69,17 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                        <input type="email" required name="email" class="form-control" placeholder="Enter your email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <input type="email" required name="email" class="form-control" placeholder="Enter your email"  aria-describedby="emailHelp">
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Phone</label>
-                                        <input type="text" required name="phone" class="form-control" placeholder="Enter Phone Number" id="exampleInputPassword1">
+                                        <input type="text" required name="phone" class="form-control" placeholder="Enter Phone Number" >
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Address</label>
-                                        <textarea rows="2" required name="address" class="form-control" placeholder="Enter your Address" id="exampleInputEmail1" aria-describedby="emailHelp"></textarea>
+                                        <textarea rows="2" required name="address" class="form-control" placeholder="Enter your Address"  aria-describedby="emailHelp"></textarea>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label  class="form-label">Select Course</label>
@@ -100,7 +100,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" required name="password" class="form-control" placeholder="Enter password" id="exampleInputPassword1">
+                                        <input type="password" required name="password" class="form-control" placeholder="Enter password" >
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label  class="form-label">Confirm Password</label>
@@ -131,16 +131,16 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputPassword1" >Gender</label>
-                                        <input type="radio"  name="radio"  value="Male" id="exampleInputPassword1" required>
+                                        <input type="radio"  name="radio"  value="Male"  required>
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Male</label>
-                                        <input type="radio"  name="radio"  value="Female" id="exampleInputPassword1">
+                                        <input type="radio"  name="radio"  value="Female" >
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Female</label>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputPassword1" class="form-label" >Martial Status</label>
-                                        <input type="radio"  name="status"  value="Single" id="exampleInputPassword1" required>
+                                        <input type="radio"  name="status"  value="Single"  required>
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter" >Single</label>
-                                        <input type="radio"  name="status"  value="Married" id="exampleInputPassword1">
+                                        <input type="radio"  name="status"  value="Married" >
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Married</label>
                                     </div>
                                 </div>
@@ -157,16 +157,16 @@
                                     </div>
 
                                     <div class="col-md-4 mb-3">
-                                        <select name ="state" class="form-select  mb-3" id="state" required></select>
+                                        <select name ="state" class="form-select  mb-3" id="state"></select>
                                     </div>
 
                                     <div class="col-md-4 mb-3">
-                                        <select name ="city" class="form-select mb-3" id="city" required></select>
+                                        <select name ="city" class="form-select mb-3" id="city"></select>
                                     </div>
 
                                 </div>
                                 <div class="col-md-12 mb-3">
-                                    <input type="checkbox" required name="agree"  value="Single" id="exampleInputPassword1">
+                                    <input type="checkbox" required name="agree"  value="Single" >
                                     <label for="exampleInputPassword1"  class="form-label" style="font-weight: lighter">I have agreed terms and conditions</label>
                                 </div>
                                 <div class="row">
@@ -222,12 +222,6 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function () {
-        $('.search_select_box select').selectize({
-            sortField: 'text'
-        });
-    });
-    </script>
+
 </body>
 </html>

@@ -104,6 +104,9 @@ class HomeController extends Controller
     }
 
 
+
+
+
     public function getCountries(){
         $countries = DB::table('countries')->get();
 
@@ -111,7 +114,7 @@ class HomeController extends Controller
     }
     public function getStates(Request $request){
         $states = DB::table('states')->where('country_id',$request->country_id)->get();
-
+        echo 200;
         if(count($states)>0){
             return response()->json($states);
         }
