@@ -157,11 +157,11 @@
                                     </div>
 
                                     <div class="col-md-4 mb-3">
-                                        <select name ="state" class="form-select  mb-3" id="state"></select>
+                                        <select name ="state" class="form-select  mb-3" id="state" required></select>
                                     </div>
 
                                     <div class="col-md-4 mb-3">
-                                        <select name ="city" class="form-select mb-3" id="city"></select>
+                                        <select name ="city" class="form-select mb-3" id="city" required></select>
                                     </div>
 
                                 </div>
