@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -23,9 +24,9 @@ class OperationController extends Controller
             'image'=>'required|image|mimes:jpeg,jpg,png,svg|max:2048'
         ]);
 
-        $imageName = $emp_id.'.'.$request->image->extension();
-
-        $request->image->move(public_path('images'),$imageName);
+        $imageName1 = $emp_id.'.'.$request->image->extension();
+        $imageName = "images/".$imageName1;
+        $request->image->move(public_path('images'),$imageName1);
 
 
         $name = $request->input('name');
@@ -41,8 +42,12 @@ class OperationController extends Controller
 
     public function editdetail($id)
     {
-        $details = DB::select('select * from details where id = ?', [$id]);
-        return view('details',['status'=>200,'details'=>$details]);
+        $detail = Detail::find($id);
+
+        return response()->json([
+            'status'=>200,
+            'detail'=>$detail,
+        ]);
     }
 
     public function updatedetail(Request $request)
@@ -56,16 +61,14 @@ class OperationController extends Controller
             $request->validate([
                 'new_image'=>'required|image|mimes:jpeg,jpg,png,svg|max:2048'
             ]);
-            if(File::exists(public_path('images/'.$details[0]->image)))
+            if(File::exists(public_path($details[0]->image)))
             {
-                File::delete(public_path('images/'.$details[0]->image));
+                File::delete(public_path($details[0]->image));
 
-            }else{
-                return "File not found";
             }
-            $imageName = $emp_id.'.'.$request->new_image->extension();
-
-            $request->new_image->move(public_path('images'),$imageName);
+            $imageName1 = $emp_id.'.'.$request->new_image->extension();
+            $imageName = "images/".$imageName1;
+            $request->new_image->move(public_path('images'),$imageName1);
         }else{
             $imageName = $details[0]->image;
         }
@@ -81,9 +84,9 @@ class OperationController extends Controller
     {
         $details = DB::select('select * from details where id = ?', [$id]);
         if($details[0]->image != "default.png") {
-            if(File::exists(public_path('images/'.$details[0]->image)))
+            if(File::exists(public_path($details[0]->image)))
             {
-                File::delete(public_path('images/'.$details[0]->image));
+                File::delete(public_path($details[0]->image));
 
             }
         }

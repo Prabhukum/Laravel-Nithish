@@ -17,18 +17,25 @@
         font-weight: bold;
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
-        background-image: url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60');
+        background-color: #525252;
+        /* background-image: url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60'); */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
         }
+        .centered-form{
+            background: rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
 <body>
-    <div class="py-5">
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand px-5 h1">Registration Form</span>
+    </nav>
+    <div class="py-3">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center ">
                 <div class="col-md-8">
                     <?php if(session('message')!='')
                     {
@@ -43,9 +50,9 @@
                     // unset(session('message'));
                     }
                     ?>
-                    <div class="card shadow">
-                        <div class="card-header">
-                        <h4>Registerartion Form</h4>
+                    <div class="card shadow centered-form">
+                        <div class="card-header" style="background: #f2f2f2">
+                        <h4>Registration Form</h4>
                         </div>
                         <div class="card-body">
                             <form action="/register" method="post">
@@ -124,15 +131,15 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputPassword1" >Gender</label>
-                                        <input type="radio"  name="radio"  value="Male" id="exampleInputPassword1">
+                                        <input type="radio"  name="radio"  value="Male" id="exampleInputPassword1" required>
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Male</label>
                                         <input type="radio"  name="radio"  value="Female" id="exampleInputPassword1">
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Female</label>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="exampleInputPassword1" class="form-label" >Martial Status</label>
-                                        <input type="radio"  name="status"  value="Single" id="exampleInputPassword1">
-                                        <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Single</label>
+                                        <input type="radio"  name="status"  value="Single" id="exampleInputPassword1" required>
+                                        <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter" >Single</label>
                                         <input type="radio"  name="status"  value="Married" id="exampleInputPassword1">
                                         <label for="exampleInputPassword1" class="form-label" style="font-weight: lighter">Married</label>
                                     </div>
@@ -164,8 +171,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="mb-3">
-                                        <button type="submit" name="register" class="btn btn-primary col-md-6">Submit</button>
-                                        <span class="col-md-6" >Already registered?then <a href="#">click here</a></span>
+                                        <button type="submit" name="register" class="btn btn-info btn-block text-light col-md-6">Submit</button>
+                                        <span class="col-md-6" >Already registered?then <a href="/login-view">click here</a></span>
                                     </div>
 
                                 </div>

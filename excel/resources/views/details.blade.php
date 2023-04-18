@@ -6,28 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" rel="stylesheet">
-
+    {{-- === datatables === --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+    {{-- === end datatables === --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" ></script>
     <title>Details</title>
     <style>
-
+        body{
+            background: #e6e6e6;
+        }
         th, td {
         text-align: center;
         vertical-align:middle;
         }
 
+        .sorting {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+
     <!-- Add Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Add Details</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header bg-primary">
+                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Add Details</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="{{ url('add-details')}}" method="post" enctype="multipart/form-data">
                     @csrf
@@ -68,46 +77,45 @@
  <!-- end Add Modal -->
 
      <!-- edit Modal -->
-@if (count($details)>0)
+
 
 
     <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Details</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-primary">
+                    <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Edit Details</h1>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <form action="{{ url('update-details')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <input type="hidden" id="stud_id" name="stud_id" value="{{$details[0]->id}}">
+                    <input type="hidden" id="stud_id" name="stud_id">
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Emp ID</label>
-                            <input type="text" required class="form-control"  name="emp_id" value="{{$details[0]->emp_id}}">
+                            <input type="text" required class="form-control"  name="emp_id" id="emp_id">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Name</label>
-                            <input type="text" required class="form-control"  name="name" value="{{$details[0]->name}}">
+                            <input type="text" required class="form-control"  name="name"  id="name">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email</label>
-                            <input type="email" required class="form-control"  name="email" value="{{$details[0]->email}}">
+                            <input type="email" required class="form-control"  name="email"  id="email">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Mobile</label>
-                            <input type="text" required class="form-control"  name="mobile" value="{{$details[0]->mobile}}">
+                            <input type="text" required class="form-control"  name="mobile"  id="mobile">
                         </div>
 
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Image</label>
-                            <input type="file"  class="form-control"  name="new_image" id="image">
+                            <input type="file"  class="form-control"  name="new_image" id="new_image">
                         </div>
-                        <div class="mb-3">
-                            <label for="">Photo</label>
-                            <img src="images/{{$details[0]->image}}" alt="Avatar" class="w-25">
+                        <div class="mt-2" id="avatar">
+
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -118,7 +126,7 @@
             </div>
         </div>
     </div>
-@endif
+
  <!-- end edit Modal -->
 
 
@@ -127,9 +135,9 @@
 <div class="modal fade" id="deleteModal">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header ">
+                <h5 class="modal-title " id="exampleModalLabel">Details</h5>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>Are you sure you want to delete?</p>
@@ -147,16 +155,16 @@
 <div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Import Details</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header bg-primary">
+                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Import Details</h1>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <form action="/import" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"><strong>Import</strong></label>
-                    <input type="file"  class="form-control"  name="file">
+                    <input type="file"  required class="form-control"  name="file">
                 </div>
 
                 <div class="modal-footer">
@@ -169,65 +177,76 @@
 </div>
 {{-- end import Detail --}}
 
-    <div class="container" id="detail_table">
 
 
+        <nav class="navbar navbar-dark bg-dark">
+            <span class="navbar-brand px-5 h1">Admin Panel</span>
+        </nav>
 
-        <button class="btn btn-primary my-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Details</button>
-
-        <button class="btn btn-primary my-2" ><a href="/export" class="text-light">Export Details</a> </button>
-
-        <button class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#importModal">import Details</a> </button>
+        <div class="container" id="detail_table">
 
         @if (session('status'))
             <div class="alert alert-success">{{session('status')}}</div>
         @endif
-        <div class="row">
-            <div class="card">
-                <div class="card-header">
-                   <h4>Details</h4>
+        <div class="row py-5">
+            <div class="card px-0">
+                <div class="card-header bg-primary">
+                   <div class="row" style="width: 100%">
+                        <div class="col-6">
+                            <span style="font-size: 26px" class="text-light"><b>User Details</b></span>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#exampleModal">Add Details</button>
+
+                            <button class="btn btn-light " ><a href="/export" class="text-dark" style="text-decoration: none">Export Details</a> </button>
+
+                            <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#importModal">import Details</a> </button>
+
+                            <button class="btn btn-light" style="width:130px; height:40px;" ><a href="/login-view" class="text-dark" style="text-decoration: none; ">Login</a> </button>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered table-striped">
-                        <thead>
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead class="headcenter">
                             <tr>
-                                <th>ID</th>
-                                <th>Emp ID</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Mobile</th>
-                                <th>Image</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
-
+                                <th style="text-align: center;">ID</th>
+                                <th style="text-align: center;">Emp ID</th>
+                                <th style="text-align: center;">Name</th>
+                                <th style="text-align: center;">Email</th>
+                                <th style="text-align: center;">Mobile</th>
+                                <th style="text-align: center;">Image</th>
+                                <th style="text-align: center;">Edit</th>
+                                <th style="text-align: center;">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-
                             @forelse ($details as $detail)
 
-                                <tr>
-                                    <td>{{$detail->id}}</td>
-                                    <td>{{$detail->emp_id}}</td>
-                                    <td>{{$detail->name}}</td>
-                                    <td>{{$detail->email}}</td>
-                                    <td>{{$detail->mobile}}</td>
-                                    <td>
-                                        <img src="images/{{$detail->image}}" alt="Avatar" class="w-25">
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-sm btn-primary editbtn" value="{{$detail->id}}" >Edit</button>
-                                    </td>
-                                    <td>
+                            <tr>
+                                <td>{{$detail->id}}</td>
+                                <td>{{$detail->emp_id}}</td>
+                                <td>{{$detail->name}}</td>
+                                <td>{{$detail->email}}</td>
+                                <td>{{$detail->mobile}}</td>
+                                <td>
+                                    <img src="{{$detail->image}}" alt="Avatar" width="30px">
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary editbtn" value="{{$detail->id}}" >Edit</button>
+                                </td>
+                                <td>
 
-                                    <button type="button" class="btn btn-sm btn-danger deletebtn" value="{{$detail->id}}">Delete</button>
+                                <button type="button" class="btn btn-sm btn-danger deletebtn" value="{{$detail->id}}">Delete</button>
 
 
-                                    </td>
-                                </tr>
-                            @empty
-                                <p>No details found</p>
-                            @endforelse
+                                </td>
+                            </tr>
+                        @empty
+                            <p>No details found</p>
+                        @endforelse
+
 
                         </tbody>
                     </table>
@@ -235,6 +254,11 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script>
@@ -247,9 +271,17 @@
                 $.ajax({
                     type: "GET",
                     url: "/edit-details/"+stud_id,
-                    data: "data",
                     success: function (response) {
-                        console.log(response);
+                        // console.log(response.detail.name);
+                        $('#emp_id').val(response.detail.emp_id);
+                        $('#name').val(response.detail.name);
+                        $('#email').val(response.detail.email);
+                        $('#mobile').val(response.detail.mobile);
+                        $('#avatar').html(
+                            `<img src="${response.detail.image}" width="100" class="img-fluid img-thumbnail">`
+                        );
+                        $('#stud_id').val(response.detail.id);
+
                     }
                 });
             });
@@ -304,6 +336,15 @@
                    });
                 }
                 });
+            });
+        });
+
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                scrollY: '250px',
+                scrollCollapse: true,
+                paging: true,
             });
         });
     </script>

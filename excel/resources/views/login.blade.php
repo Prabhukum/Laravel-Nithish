@@ -17,15 +17,23 @@
         font-weight: bold;
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
-        background-image: url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60');
+        background-color: #525252;
+        /* background-image: url('https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60'); */
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
         background-attachment: fixed;
         }
+        .centered-form{
+            background: rgba(255, 255, 255, 0.8);
+        }
+
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand px-5 h1">Login Form</span>
+    </nav>
     <div class="py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -43,8 +51,8 @@
                     // unset(session('message'));
                     }
                     ?>
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card centered-form">
+                        <div class="card-header" style="background: #f2f2f2">
                         <h4>Login Form</h4>
                         </div>
                         <div class="card-body">
@@ -58,10 +66,15 @@
                                     <label for="exampleInputPassword1" class="form-label">Password</label>
                                     <input type="password" name="password" class="form-control" placeholder="Enter password" id="exampleInputPassword1">
                                 </div>
-                                <div class="mb-3">
+                                <div class="forgot mb-3">
+                                    <a href="{{route('forgot.password.get')}}">Forgot password</a>
+                                </div>
+                                <div class="mb-3 ">
 
-                                <button type="submit" name="login_btn" class="btn btn-primary">Login</button>
-                                @csrf
+                                    <button type="submit" name="login_btn" class="btn btn-primary ">Login</button>
+                                    <span class="col-md-6 click" >Not yet registered?then <a href="/registeration">click here</a></span>
+                                    @csrf
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -70,6 +83,6 @@
             </div>
         </div>
     </div>
-   
+
 </body>
 </html>

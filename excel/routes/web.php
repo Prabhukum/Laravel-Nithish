@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CountryStateCityController;
 use App\Http\Controllers\OperationController;
+use App\Http\Controllers\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,13 @@ Route::get('delete-detail/{id}',[OperationController::class,'deletedetail']);
 Route::get('countries',[CountryStateCityController::class,'getCountries'])->name('countries');
 Route::get('states',[CountryStateCityController::class,'getStates'])->name('states');
 Route::get('cities',[CountryStateCityController::class,'getCities'])->name('cities');
+
+// forgot password
+
+Route::get('forgot-password',[ForgotPasswordController::class,'showForgotPasswordForm'])->name('forgot.password.get');
+Route::post('forgot-password',[ForgotPasswordController::class,'submitForgotPasswordForm'])->name('forgot.password.post');
+
+Route::get('reset-password/{token}',[ForgotPasswordController::class,'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password',[ForgotPasswordController::class,'submitResetPasswordForm'])->name('reset.password.post');
+
+//end forgot password
