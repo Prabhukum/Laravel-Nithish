@@ -172,7 +172,7 @@
                                 <div class="row">
                                     <div class="mb-3">
                                         <button type="submit" name="register" class="btn btn-info btn-block text-light col-md-6">Submit</button>
-                                        <span class="col-md-6" >Already registered?then <a href="/login-view">click here</a></span>
+                                        <span class="col-md-6" >Already registered?then <a href="/">click here</a></span>
                                     </div>
 
                                 </div>

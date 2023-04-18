@@ -95,7 +95,7 @@
               </div>
               <div class="card-footer">
                 <button class="btn btn-success" type="submit">Send Password Reset Link</button>
-                <a href="/login-view" class="btn btn-danger">Back to Login</a>
+                <a href="/" class="btn btn-danger">Back to Login</a>
               </div>
             </form>
           </div>

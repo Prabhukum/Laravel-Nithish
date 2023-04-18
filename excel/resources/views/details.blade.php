@@ -202,7 +202,7 @@
 
                             <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#importModal">import Details</a> </button>
 
-                            <button class="btn btn-light" style="width:130px; height:40px;" ><a href="/login-view" class="text-dark" style="text-decoration: none; ">Login</a> </button>
+                            <button class="btn btn-light" style="width:130px; height:40px;" ><a href="/" class="text-dark" style="text-decoration: none; ">Login</a> </button>
 
                         </div>
                     </div>

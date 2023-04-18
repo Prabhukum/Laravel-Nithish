@@ -66,6 +66,6 @@ class ForgotPasswordController extends Controller
         ->where('email',$request->input('email'))
         ->delete();
 
-        return redirect('/login-view')->with('message','Your password has been changed');
+        return redirect('/')->with('message','Your password has been changed');
     }
 }

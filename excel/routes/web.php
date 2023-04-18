@@ -21,7 +21,7 @@ Route::get('/registeration',[HomeController::class,'view']);
 
 Route::post('/register',[HomeController::class,'register']);
 
-Route::get('/login-view',[HomeController::class,'loginview']);
+Route::get('/',[HomeController::class,'loginview']);
 Route::post('/login',[HomeController::class,'login']);
 
 Route::get('/view',[HomeController::class,'view']);

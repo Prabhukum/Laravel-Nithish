@@ -55,7 +55,7 @@ class HomeController extends Controller
                 {
                     DB::insert("insert into register(emp_id,username,email,password,phone,address,course,designation,experience,gender,martial_status,country,state,city) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                     [$emp_id,$username,$email,$password,$phone,$address,$course,$designation,$exp,$gender,$status,$country,$state,$city]);
-                    return redirect('login-view')->with('message','Registered Successfully! Please Login');
+                    return redirect('')->with('message','Registered Successfully! Please Login');
                 }
                 else{
                     return redirect('registeration')->with('message','Passwords are different');
@@ -73,20 +73,23 @@ class HomeController extends Controller
     }
     public function login(Request $request)
     {
-        $email = DB::table('register')->where('email',$request->email)->get();
-        $password = DB::table('register')->where('password',$request->password)->get();
+        $email = DB::table('register')
+        ->where('email',$request->email)
+        ->where('password',$request->password)
+        ->get();
+        // $password = DB::table('register')->where('password',$request->password)->get();
 
         if(count($email)>0){
-            if(count($password)>0){
+            // if(count($password)>0){
                 return redirect('detail')->with('message','Loggedin Successfully!');
             }
             else{
-                return redirect('login-view')->with('message','Password and Email does not match');
+                return redirect('/')->with('message','Password and Email does not match');
             }
-        }
-        else{
-            return redirect('login-view')->with('message','Email does not found');
-        }
+        // }
+        // else{
+        //     return redirect('/')->with('message','Email does not found');
+        // }
     }
 
 
