@@ -5,12 +5,22 @@
         float: none; /* Added */
         margin-bottom: 10px; /* Added */
     }
+    .card-outer{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 1366px;
+        height: 768px;
+            /* margin: auto; */
+        margin-top: calc(calc(100vh - 768px) * 0.5);
+        margin-left: calc(calc(100vw - 1366px) * 0.5);
+    }
     a {
         text-decoration: none;
     }
 </style>
-    <div class="">
-        <div style="width: 1230px; height: 748px; margin:auto; margin-top: 10%;">
+    <div class="card-outer">
+        {{-- <div style="width: 1230px; height: 748px; margin:auto; margin-top: 10%;"> --}}
             <div class="card shadow ">
                 <div class="card-body">
                     <div class="row">
@@ -44,6 +54,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
 @include('includes.footer')
