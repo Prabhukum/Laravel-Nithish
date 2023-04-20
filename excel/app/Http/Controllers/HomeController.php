@@ -31,7 +31,7 @@ class HomeController extends Controller
             $phone = DB::table('register')->where('phone',$request->phone)->get();
 
             if(count($phone)>0){
-                return redirect('registeration')->with('message','phone already registered');
+                return redirect('registeration')->with('message','Mobile Number already registered');
             }
             else{
 

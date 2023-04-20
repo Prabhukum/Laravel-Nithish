@@ -175,10 +175,17 @@ opacity:1;
         background-color: #0033A1;
         color: #EBEBEB;
     }
+    .btn2:active{
+
+        background-color: #0033A1;
+        color: #EBEBEB;
+        font-weight: bold;
+    }
     .active {
         background-color: #0033A1 !important;
         color: #EBEBEB;
     }
+
 
 
     .btnrst{

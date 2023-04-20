@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     {{-- === datatables === --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -25,6 +27,12 @@
 
         .sorting {
             text-align: center;
+        }
+        .danger{
+            color:red;
+        }
+        .update{
+            color:#0033A1;
         }
     </style>
 </head>
@@ -156,7 +164,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-primary">
-                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Import Details</h1>
+                <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Import Users Details</h1>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -196,13 +204,13 @@
                             <span style="font-size: 26px" class="text-light"><b>User Details</b></span>
                         </div>
                         <div class="col-6">
-                            <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#exampleModal">Add Details</button>
+                            <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-circle-plus"></i> Add Details</button>
 
-                            <button class="btn btn-light " ><a href="/export" class="text-dark" style="text-decoration: none">Export Details</a> </button>
+                            <button class="btn btn-light " ><a href="/export" class="text-dark" style="text-decoration: none"><i class="fa-solid fa-file-export"></i> Export Details</a> </button>
 
-                            <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#importModal">import Details</a> </button>
+                            <button class="btn btn-light " data-bs-toggle="modal" data-bs-target="#importModal"><i class="fa-solid fa-file-import"></i> import Details</a> </button>
 
-                            <button class="btn btn-light" style="width:130px; height:40px;" ><a href="/" class="text-dark" style="text-decoration: none; ">Logout</a> </button>
+                            <button class="btn btn-light" style="width:130px; height:40px;" ><a href="/" class="text-dark" style="text-decoration: none; "><i class="fa-solid fa-right-from-bracket"></i> Logout</a> </button>
 
                         </div>
                     </div>
@@ -217,8 +225,9 @@
                                 <th style="text-align: center;">Email</th>
                                 <th style="text-align: center;">Mobile</th>
                                 <th style="text-align: center;">Image</th>
-                                <th style="text-align: center;">Edit</th>
-                                <th style="text-align: center;">Delete</th>
+                                <th style="text-align: center;">Action</th>
+
+                                <th style="text-align: center;">PDF</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -234,12 +243,13 @@
                                     <img src="{{$detail->image}}" alt="Avatar" width="30px">
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-sm btn-primary editbtn" value="{{$detail->id}}" >Edit</button>
+                                    <button type="button" class=" editbtn" value="{{$detail->id}}" title="Edit" data-bs-toggle="tooltip" style="border:none"><i class="fa-solid fa-pen-to-square update"></i></button>
+
+                                    <button type="button" class=" deletebtn" value="{{$detail->id}}" title="Delete" data-bs-toggle="tooltip" style="border:none"><i class="fa-solid fa-trash danger"></i></button>
                                 </td>
                                 <td>
-
-                                <button type="button" class="btn btn-sm btn-danger deletebtn" value="{{$detail->id}}">Delete</button>
-
+                                    <a href="/view_user_pdf/{{$detail->id}}" title="View" data-bs-toggle="tooltip"><i class="fa-solid fa-file fa-lg"></i></a>
+                                    <a href="/export_user_pdf/{{$detail->id}}" title="Download" data-bs-toggle="tooltip"><i class="fa-solid fa-file-arrow-down fa-lg"></i></i></a>
 
                                 </td>
                             </tr>
@@ -327,12 +337,24 @@
                         success: function (response) {
                             if(response == 200)
                             {
-                                // swal("Success!", "Detail successfully Deleted!", "success");
+                                swal("Success!", "User Detail successfully Deleted!", "success");
                                 // $("#detail_table").load(location.href + " #detail_table")
-                                window.location.href="/detail" ;
+                                setTimeout(function() {
+
+                                    location.reload();
+
+                                }, 3000);
+                                // window.location.href="/detail" ;
                                 // location="/details";
                             }
                         }
+                        //  error: function(error) {
+
+                        //     // alert('Error deleting employee: ' + error);
+
+                        //     swal("Problem in deleting", "Cannot able to delete", "error");
+
+                        // }
                    });
                 }
                 });

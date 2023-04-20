@@ -48,3 +48,9 @@ Route::get('reset-password/{token}',[ForgotPasswordController::class,'showResetP
 Route::post('reset-password',[ForgotPasswordController::class,'submitResetPasswordForm'])->name('reset.password.post');
 
 //end forgot password
+//start pdf Route
+
+Route::get('/export_user_pdf/{id}',[OperationController::class,'export_user_pdf'])->name('export_user_pdf');
+Route::get('/view_user_pdf/{id}',[OperationController::class,'view_user_pdf'])->name('view_user_pdf');
+
+//end pdf

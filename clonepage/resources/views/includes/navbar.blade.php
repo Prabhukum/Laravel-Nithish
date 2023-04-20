@@ -1,5 +1,5 @@
 {{-- <div class="col-12" > --}}
-<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-default fixed-top" style="background: white" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary navbar-default " style="background: white" >
     <div class="container-fluid shadow">
 
         <img src="images/header.PNG" alt="nav-image" class="ms-4 image-view">

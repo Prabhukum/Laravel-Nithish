@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 use DB;
+use PDF;
 
 class OperationController extends Controller
 {
@@ -37,7 +38,7 @@ class OperationController extends Controller
         DB::insert("insert into details(emp_id,name,email,mobile,password,image) values(?,?,?,?,?,?)",
         [$emp_id,$name,$email,$mobile,$password,$imageName]);
 
-        return redirect()->back()->with('status','Details Added Successfully');
+        return redirect()->back()->with('status','User Detail Added Successfully');
     }
 
     public function editdetail($id)
@@ -77,7 +78,7 @@ class OperationController extends Controller
         $email = $request->input('email');
         $mobile = $request->input('mobile');
         DB::update('update details set emp_id=?,name=?,email=?,mobile=?,image=? where id=?',[$emp_id,$name,$email,$mobile,$imageName,$id]);
-        return redirect()->back()->with('status','Details Updated Successfully');
+        return redirect()->back()->with('status','User Detail Updated Successfully');
     }
 
     public function deletedetail($id)
@@ -95,4 +96,29 @@ class OperationController extends Controller
         // return redirect()->back();
 
     }
+
+    // Pdf function
+
+    public function export_user_pdf($id)
+    {
+        $details = DB::select('select * from details where id = ?', [$id]);
+
+        $pdf = Pdf::loadView('pdf.users',[
+            'details'=>$details
+        ]);
+        return $pdf->download('users.pdf');
+    }
+    public function view_user_pdf($id)
+    {
+        $details = DB::select('select * from details where id = ?', [$id]);
+
+        $pdf = Pdf::loadView('pdf.users',[
+            'details'=>$details
+        ]);
+        return $pdf->stream();
+    }
+
+    // end Pdf function
+
+
 }

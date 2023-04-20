@@ -11,113 +11,126 @@
     a {
         text-decoration: none;
     }
-    .gv-container div.dataTables_scrollBody {
-        background: none !important;
+
+    .card-outer{
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 1366px;
+        height: 934px;
+            /* margin: auto; */
+        margin-top: calc(calc(100vh - 934px) * 0.5);
+        margin-left: calc(calc(100vw - 1366px) * 0.5);
     }
+    
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
-@include('includes.navbar')
-@include('includes.sidebar')
+<div class="card-outer">
+    <div class="card shadow" >
+        @include('includes.navbar')
+        @include('includes.sidebar')
 
 
-<div class="home">
-    <div class="py-5 px-3">
-        <div class="row" >
-            <div class="col-2" >
-            <span style="font-size: 16px;" ><b>Pipe Line</b></span>
-            </div>
-            <div class="btn-group" style="position:fixed; margin-left:20%;margin-right:30%">
-                <button  class="btn1" >Scenarios</button>
-                <button  class="btn1" >Active</button>
-                <button  class="btn1" >Funded</button>
-                <button  class="btn1"  style="width: 141px;">Cancelled/Declined</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="px-3" >
-        <div class="container-fluid shadow p-2">
-            <span class="ms-1"style="font-size: 14px">search</span>
-            <div class="row ms-1 me-1 align-items-center" style="height: 69px; background: #EFF5FC">
-                    <div class="col-10">
-                        <label style="font-size: 14px">Search by</label>
-                        <input type="date" class="ms-5" >
-                        <select  class="ms-4" aria-label="Default select example">
-                            <option selected style="font-size: 14px">Borrower Name</option>
-                            <option value="1" style="font-size: 14px">No Borrower Name</option>
-                        </select>
+        <div class="home">
+            <div class="py-5 px-3">
+                <div class="row" >
+                    <div class="col-3" >
+                    <span style="font-size: 16px;" ><b>Pipe Line</b></span>
                     </div>
-                    <div class="col-2">
-                        <button class="btnrst" style="width: 69px;  height: 28px;">Reset</button>
-                        <button class="btngo" style="width: 37px;  height: 28px;">Go</button>
+                    <div class="col-9 btn-group" >
+                        <button  class="btn1" >Scenarios</button>
+                        <button  class="btn1" >Active</button>
+                        <button  class="btn1" >Funded</button>
+                        <button  class="btn1"  style="width: 141px;">Cancelled/Declined</button>
                     </div>
+                </div>
             </div>
-        </div>
 
-    </div>
-    <div class="px-3">
-        <div class="container-fluid shadow p-2" >
-            <table id="example" class="table table-striped" style="width:100%">
-                <thead style="background: #E3ECF6 0% 0% no-repeat padding-box;  font-size:12px">
-                    <tr>
-                        <th>Scenario Name</th>
-                        <th>Borrower Name</th>
-                        <th>Date</th>
-                        <th>Loan Officer</th>
-                        <th>Loan Purpose</th>
-                        <th>Broker Name</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody style="border-radius:5px;background: #FCFCFC  0% 0% no-repeat padding-box; font-size:12px">
-                    <tr>
-                        <td>Scenario-1</td>
-                        <td>Andy America</td>
-                        <td>02/22/2023</td>
-                        <td>George</td>
-                        <td>Purchase</td>
-                        <td>Sunal</td>
-                        <td>Awaiting Income</td>
-                    </tr>
-                    <tr>
-                        <td>Scenario-2</td>
-                        <td>Andy</td>
-                        <td>04/12/2023</td>
-                        <td>Daniel</td>
-                        <td>Purchase</td>
-                        <td>Sunal</td>
-                        <td><a style="color:#8AB7E9; text-decoration: none;" href="#">Initiate Pricing</a></td>
-                    </tr>
-                    <tr>
-                        <td>Scenario-3</td>
-                        <td>America</td>
-                        <td>03/22/2023</td>
-                        <td>Soburt</td>
-                        <td>Purchase</td>
-                        <td>Robert</td>
-                        <td><a style="color:#8AB7E9; text-decoration: none;" href="#">Submit Loan</a></td>
-                    </tr>
-                    <tr>
-                        <td>Scenario-4</td>
-                        <td>Amy America</td>
-                        <td>01/20/2023</td>
-                        <td>Salah</td>
-                        <td>Purchase</td>
-                        <td>Noki</td>
-                        <td>Awaiting Income</td>
-                    </tr>
-                    <tr>
-                        <td>Scenario-5</td>
-                        <td>Patricia Gail</td>
-                        <td>01/20/2023</td>
-                        <td>Salah</td>
-                        <td>Purchase</td>
-                        <td>Noki</td>
-                        <td>Awaiting Income</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="px-3" style="margin-top: -40px">
+                <div class="container-fluid shadow p-2">
+                    <span class="ms-1"style="font-size: 14px">search</span>
+                    <div class="row ms-1 me-1 align-items-center" style="height: 69px; background: #EFF5FC">
+                            <div class="col-10">
+                                <label style="font-size: 14px">Search by</label>
+                                <input type="date" class="ms-5" >
+                                <select  class="ms-4" aria-label="Default select example">
+                                    <option selected style="font-size: 14px">Borrower Name</option>
+                                    <option value="1" style="font-size: 14px">No Borrower Name</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <button class="btnrst" style="width: 69px;  height: 28px;">Reset</button>
+                                <button class="btngo" style="width: 37px;  height: 28px;">Go</button>
+                            </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="px-3">
+                <div class="container-fluid shadow p-2" >
+                    <table id="example" class="table table-striped" style="width:100%">
+                        <thead style="background: #E3ECF6 0% 0% no-repeat padding-box;  font-size:12px">
+                            <tr>
+                                <th>Scenario Name</th>
+                                <th>Borrower Name</th>
+                                <th>Date</th>
+                                <th>Loan Officer</th>
+                                <th>Loan Purpose</th>
+                                <th>Broker Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody style="border-radius:5px;background: #FCFCFC  0% 0% no-repeat padding-box; font-size:12px">
+                            <tr>
+                                <td>Scenario-1</td>
+                                <td>Andy America</td>
+                                <td>02/22/2023</td>
+                                <td>George</td>
+                                <td>Purchase</td>
+                                <td>Sunal</td>
+                                <td>Awaiting Income</td>
+                            </tr>
+                            <tr>
+                                <td>Scenario-2</td>
+                                <td>Andy</td>
+                                <td>04/12/2023</td>
+                                <td>Daniel</td>
+                                <td>Purchase</td>
+                                <td>Sunal</td>
+                                <td><a style="color:#8AB7E9; text-decoration: none;" href="#">Initiate Pricing</a></td>
+                            </tr>
+                            <tr>
+                                <td>Scenario-3</td>
+                                <td>America</td>
+                                <td>03/22/2023</td>
+                                <td>Soburt</td>
+                                <td>Purchase</td>
+                                <td>Robert</td>
+                                <td><a style="color:#8AB7E9; text-decoration: none;" href="#">Submit Loan</a></td>
+                            </tr>
+                            <tr>
+                                <td>Scenario-4</td>
+                                <td>Amy America</td>
+                                <td>01/20/2023</td>
+                                <td>Salah</td>
+                                <td>Purchase</td>
+                                <td>Noki</td>
+                                <td>Awaiting Income</td>
+                            </tr>
+                            <tr>
+                                <td>Scenario-5</td>
+                                <td>Patricia Gail</td>
+                                <td>01/20/2023</td>
+                                <td>Salah</td>
+                                <td>Purchase</td>
+                                <td>Noki</td>
+                                <td>Awaiting Income</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -146,7 +159,7 @@
                             "next": '<i class="fa fa-angle-right" style="font-size:10px"></i>',
 
                         }
-                        
+
                     },
             // dom: '<"row table_header"<"col-md-1"i><"col-md-1"l><"col-md-8"><"col-md-2"p>>',
             // dom: '',
@@ -160,6 +173,15 @@
         $(".btn1").removeClass("active");
         $(this).addClass("active");
     });
+    $(".btn2").click(function(){
+        $(".btn2").removeClass("active2");
+
+        $(this).addClass("active2");
+
+
+
+    });
+
 
 
 </script>
