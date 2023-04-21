@@ -33,7 +33,7 @@ input[type="text"], select.form-control {
         font-weight: bold;
 
     }
-    input[type="date"], select.form-control {
+    input[list="brow"], select.form-control {
         margin: 0 auto;
         float: none;
         border: none;
@@ -42,7 +42,15 @@ input[type="text"], select.form-control {
         border-bottom-color: #6A679E;
         background: transparent;
     }
-
+    input[list="list"], select.form-control {
+        margin: 0 auto;
+        float: none;
+        border: none;
+        border-bottom: 1px solid #000000;
+        outline: none;
+        border-bottom-color: #6A679E;
+        background: transparent;
+    }
     input[type="date"]::-webkit-calendar-picker-indicator {
         position: relative;
         color: rgba(0, 0, 0, 0);
@@ -56,6 +64,7 @@ input[type="text"], select.form-control {
 
     select, select.form-control {
         margin: 0 auto;
+
         float: none;
         border: none;
         border-bottom: 1px solid #000000;
