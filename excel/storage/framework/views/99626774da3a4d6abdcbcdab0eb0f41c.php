@@ -29,28 +29,29 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{$details[0]->image}}" alt="" style="margin-left:150px; width:200px;height:200px">
+        <img src="<?php echo e($details[0]->image); ?>" alt="" style="margin-left:150px; width:200px;height:200px">
         <h2>User Details</h2>
         <table class="table table-striped" id="customers">
             <tbody>
                 <tr>
                     <th><strong>Emp ID</strong></th>
-                    <td>{{$details[0]->emp_id}}</td>
+                    <td><?php echo e($details[0]->emp_id); ?></td>
                 </tr>
                 <tr>
                     <th><strong>Name</strong></th>
-                    <td>{{$details[0]->name}}</td>
+                    <td><?php echo e($details[0]->name); ?></td>
                 </tr>
                 <tr>
                     <th><strong>Email iD</strong></th>
-                    <td>{{$details[0]->email}}</td>
+                    <td><?php echo e($details[0]->email); ?></td>
                 </tr>
                 <tr>
                     <th><strong>Mobile</strong></th>
-                    <td>{{$details[0]->mobile}}</td>
+                    <td><?php echo e($details[0]->mobile); ?></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </body>
 </html>
+<?php /**PATH D:\Laravel\Git\Laravel-Nithish\excel\resources\views/pdf/users.blade.php ENDPATH**/ ?>
