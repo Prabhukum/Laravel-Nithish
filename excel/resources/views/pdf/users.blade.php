@@ -29,7 +29,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="{{$details[0]->image}}" alt="" style="margin-left:100px; width: 150px; height: 150px;">
+        <img src="{{$details[0]->image}}" alt="" style="margin-left:150px; width: 200px; height: 200px;">
         <h2>User Details</h2>
         <table class="table table-striped" id="customers">
             <tbody>
