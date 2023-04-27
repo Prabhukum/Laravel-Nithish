@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-8">
-                            <img src="images/Capture.PNG" alt="Glide Acra image" style="width: 885px; height: 768px;">
+                            <img src="images/Capture.PNG" alt="Glide Acra image" style="width: 885px; height: 768px; ">
                         </div>
                         <div class="col-4 align-self-center " style="margin-left: -15px">
                             <div class="text-center">
@@ -42,7 +42,7 @@
                                                 <input class="form-check-input" type="checkbox" id="inlineFormCheck"/>
                                                 <label class="form-check-label" for="inlineFormCheck"  style="font-size:12px;">Remember me</label>
                                             </div>
-                                            <a href="#" style="font-size:12px;"><label class="form-check-label" style="color:#0033A1" for="inlineFormCheck">Forgot Your Password?</label></a>
+                                            <label class="form-check-label"  for="inlineFormCheck"><a href="#" style="font-size:12px; color:#0033A1;">Forgot Your Password?</a></label>
                                         </div>
                                     </div>
                                 </div>

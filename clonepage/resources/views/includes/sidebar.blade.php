@@ -6,7 +6,7 @@
     <div class="menu-bar">
         <div class="menu">
             <ul class="menu-links">
-                <li class="nav-links btn2">
+                <li class="nav-links btn2 active2">
                     <a href="#">
 
                         <img src="images/list.svg" alt="logo" class="icon" style="border: 1px solid #0033A1; background: #0033A1; border-radius: 5px;">

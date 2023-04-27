@@ -2038,6 +2038,7 @@ progress {
 
 .table>thead {
     vertical-align: bottom
+
 }
 
 .table>:not(:last-child)>:last-child>* {

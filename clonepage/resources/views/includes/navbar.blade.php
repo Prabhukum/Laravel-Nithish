@@ -18,8 +18,8 @@
                         <img src="images/user_ico.PNG" alt="Notification icon" class="usericon">
                     </div>
                     <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                        style="font: normal normal 600 11px/17px Poppins;">Alexander M<span
-                            style="font: normal normal normal 9px/13px Poppins;"><br>Lo Broker</span></a>
+                        style="font: normal normal 600 11px/17px Poppins;">Nithish kumar R<span
+                            style="font: normal normal normal 9px/13px Poppins;"><br>Developer</span></a>
                     <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><span
                             class="fa fa-angle-down"></span></a>
                     <div>

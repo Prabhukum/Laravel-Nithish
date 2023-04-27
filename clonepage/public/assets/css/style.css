@@ -8,6 +8,7 @@ input[type="text"], select.form-control {
      border-bottom-color: #6A679E;
      /* margin: 0 auto; */
     float: none;
+    background: transparent;
     }
 
 
@@ -222,5 +223,35 @@ opacity:1;
     }
 
 
+    table.dataTable thead .sorting_asc:before {
+        opacity: 1 !important;
 
+    }
+    table.dataTable thead .sorting:before {
+        content: "" !important;
+        opacity: 1 !important;
+        position: absolute;
+        top:8px !important;
+        left:70%;
+        padding: 10px;
+        width: 10px;
+        height: 10px;
+        background-image: url('../../images/sorticon1.png');
+    }
+
+
+    table.dataTable thead .sorting_desc:before {
+        content: "" !important;
+        opacity: 1 !important;
+        background-image: url('../../images/sorticon.png');
+    }
+
+    table.dataTable thead .sorting_asc:after {
+        content: "" !important;
+        opacity: 0 !important;
+    }
+    table.dataTable thead .sorting:after {
+        content: "" !important;
+        opacity: 0 !important;
+    }
     /* ===== end ===== */
