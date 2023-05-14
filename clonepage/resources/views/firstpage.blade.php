@@ -1,46 +1,71 @@
 @include('includes.header')
- <style>
 
+<style>
     @media (min-width: 768px) {
-    .form-check {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0;
+        .form-check {
+            display: inline-block;
+
+            margin-bottom: 0;
+        }
+
+        .form-check-input {
+            margin-right: 5px;
+        }
     }
 
-    .form-check-input {
-        margin-right: 5px;
-    }
-}
-@media (min-width: 992px) and (max-width: 1163px) {
-    .form-check-label {
-        font-size: 14px;
-        white-space: nowrap;
-    }
-}
 
-@media (max-width: 425px) {
-    .form-check-label {
-        font-size: 12px;
-    }
-}
-@media (min-width: 992px) and (max-width: 1190px) {
-    .form-check-label {
-        font-size: 14px;
+
+    @media (min-width: 1024px) and (max-height: 626px) {
+
+        .form-check {
+            flex-wrap: wrap;
+            display: inline-block;
+        }
+
+        .form-check-input {
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
     }
 
-    .form-check-inline {
-        display: flex;
-        align-items: center;
+    @media (min-width: 1024px) and (max-height: 626px) {
+        .form-check-label {
+            white-space: normal;
+        }
     }
 
-    .form-check-input {
-        position: static;
-        margin-right: 5px;
+
+    @media (min-width: 992px) and (max-width: 1163px) {
+        .form-check-label {
+            font-size: 14px;
+            white-space: nowrap;
+        }
     }
-}
+
+    @media (max-width: 425px) {
+        .form-check-label {
+            font-size: 12px;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1190px) {
+        .form-check-label {
+            font-size: 14px;
+        }
+
+        .form-check-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-check-input {
+            position: static;
+            margin-right: 5px;
+        }
+    }
 
 </style>
+
 <div class="container mt-4">
     <div class="card-outer">
         <div class="card shadow">
@@ -51,7 +76,8 @@
                     </div>
                     <div class="col-lg-4 align-self-center">
                         <div class="text-center">
-                            <img src="images/header.PNG" alt="Glide Acra image" class="img-fluid mb-3" style="width: 187px; height: 74px;">
+                            <img src="images/header.PNG" alt="Glide Acra image" class="img-fluid mb-3"
+                                style="width: 187px; height: 74px;">
                             <p class="mt-3"><b>Welcome to Acra Lending Broker Portal</b></p>
                             <form class="px-5 mt-5">
                                 <div class="mb-3">
@@ -71,9 +97,14 @@
                                         <a href="#" style="font-size: 12px; color: #0033A1;">Forgot Your Password?</a>
                                     </div>
                                 </div>
-                                <div class="form-button mt-4">
-                                    <button class="btn btn-primary text-white " style="background: #213E97 0% 0% no-repeat padding-box; width: 345px; height: 48px; border-radius: 5px;"><a href="/third" style="color:white"><b>NEXT</a></b></button>
+                                <div class="text-center mt-4">
+                                    <div class="d-flex justify-content-center">
+                                        <button class="btn btn-primary text-white"
+                                            style="background: #213E97; width: 345px; height: 48px; border-radius: 5px;"><a
+                                                href="/third" style="color: white;"><b>NEXT</b></a></button>
+                                    </div>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -82,6 +113,5 @@
         </div>
     </div>
 </div>
-
 
 @include('includes.footer')

@@ -8,7 +8,7 @@
     }
     .card-outer{
         position: relative;
-        top: 0px;
+        top: 0px;zz
         left: 0px;
         width: 1366px;
         height: 768px;
