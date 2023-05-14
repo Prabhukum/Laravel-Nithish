@@ -99,9 +99,8 @@
                                 </div>
                                 <div class="text-center mt-4">
                                     <div class="d-flex justify-content-center">
-                                        <button class="btn btn-primary text-white"
-                                            style="background: #213E97; width: 345px; height: 48px; border-radius: 5px;"><a
-                                                href="/third" style="color: white;"><b>NEXT</b></a></button>
+                                        <a  href="/second" class="btn btn-primary text-white"
+                                            style="background: #213E97; width: 345px; height: 48px; border-radius: 5px; color: white;"><b>NEXT</b></a>
                                     </div>
                                 </div>
 
