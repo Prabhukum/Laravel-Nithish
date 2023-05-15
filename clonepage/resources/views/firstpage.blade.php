@@ -71,8 +71,8 @@
         <div class="card shadow">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-lg-8">
-                        <img src="images/Capture.PNG" alt="Glide Acra image" class="img-fluid">
+                    <div class="col-lg-8 ">
+                        <img src="images/Capture.PNG" alt="Glide Acra image" class="img-fluid d-none d-lg-block">
                     </div>
                     <div class="col-lg-4 align-self-center">
                         <div class="text-center">
